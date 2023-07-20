@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block data %}
+
+<form method="POST" action="/edit_emp/{{e2.id}}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Employee Name:</td>
+            <td><input type="text" name="efull_name" value="{{e2.efull_name}}"></td>
+        </tr>
+        <tr>
+            <td>Title:</td>
+            <td><input type="text" name="etitle" value="{{e2.etitle}}"></td>
+        </tr>
+        <tr>
+            <td>Department:</td>
+            <td><input type="text" name="edept" value="{{e2.edept}}"></td>
+        </tr>
+        <tr>
+            <td>Joining Date:</td>
+            <td><input type="date" name="estart_date" value="{{e2.estart_date}}"></td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><input type="text" name="eaddress" value="{{e2.eaddress}}"></td>
+        </tr>
+        <tr>
+            <td>Phone number:</td>
+            <td><input type="number" name="ephone" value="{{e2.ephone}}"></td>
+        </tr>
+        <tr>
+            <td>Salary:</td>
+            <td><input type="text" name="esalary" value="{{e2.esalary}}"></td>
+        </tr>
+        <tr>
+            <td>Education background:</td>
+            <td><input type="text" name="eeducation" value="{{e2.eeducation}}"></td>
+        </tr>
+        <tr>
+            <td>Work history:</td>
+            <td><input type="text" name="ework_history" value="{{e2.ework_history}}"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="send" value="Update Employee details"/></td>
+        </tr>
+    </table>
+</form>
+{% endblock data %} 

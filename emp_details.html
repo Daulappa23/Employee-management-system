@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block data %}
+
+<h1>Employee Details</h1>
+{{data}}
+
+<table class="table-bordered">
+    <tr>
+        <th scope="col">Id</th>
+        <th>Employee Name</th>
+        <th>Title</th>
+        <th>Department</th>
+        <th>Joining Date</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Salary</th>
+        <th>Education</th>
+        <th>Work History</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    {% for e in data %}
+    <tr>
+        <td>{{e.id}}</td>
+        <td>{{e.efull_name}}</td>
+        <td>{{e.etitle}}</td>
+        <td>{{e.edept}}</td>
+        <td>{{e.estart_date}}</td>
+        <td>{{e.eaddress}}</td>
+        <td>{{e.ephone}}</td>
+        <td>{{e.esalary}}</td>
+        <td>{{e.eeducation}}</td>
+        <td>{{e.ework_history}}</td>
+        <td><a href="/edit_emp/{{e.id}}">Edit</a></td>
+        <td><a href="/delete_emp/{{e.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/employee">Add New Employee</a></p>
+{% endblock data %}

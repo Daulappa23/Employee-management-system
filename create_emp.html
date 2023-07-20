@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% block data %}
+
+<form method="POST" action="/create_emp">
+    {% csrf_token %}
+      
+
+    <table>
+        <tr>
+            <td>Employee Full Name:</td>
+            <td><input type="text" name="efull_name"/></td>
+        </tr>
+        <tr>
+            <td>Employee Title:</td>
+            <td><input type="text" name="etitle"/></td>
+        </tr>
+        <tr>
+            <td>Employee Department:</td>
+            <td><input type="text" name="edept"/></td>
+        </tr>
+        <tr>
+            <td>Employee start joining date:</td>
+            <td><input type="date" name="estart_date"/></td>
+        </tr>
+        <tr>
+            <td>Employee Address:</td>
+            <td><input type="text" name="eaddress"/></td>
+        </tr>
+        <tr>
+            <td>Employee Contact No.:</td>
+            <td><input type="number" name="ephone"/></td>
+        </tr>
+        <tr>
+            <td>Salary:</td>
+            <td><input type="text" name="esalary"/></td>
+        </tr>
+        <tr>
+            <td>Employee Education background:</td>
+            <td><input type="text" name="eeducation"/></td>
+        </tr>
+        <tr>
+            <td>Employee work history:</td>
+            <td><input type="text" name="ework_history"/></td>
+        </tr>
+        <tr>
+            <td><input id ="info" type="submit" name="send" value="Add Employee"/></td>
+        </tr>
+    </table>
+</form>
+
+
+{% endblock data %}
